@@ -718,11 +718,15 @@
         secondsElSelector: '.js-cd-seconds'
       });
 
-     //   $('#subscribeEmailButton').on('click', function (e) {
-    	// e.preventDefault();
-    	// $('#subscribeSrEmail').parent().parent().append('<p class="alert alert-success">Cảm ơn bạn đã đăng ký</p>');
-    	// 	$.post('https://gsviec.com/subscribe/weekly',{name: "Duythien", email: $('#email').val()});
-   		// })
+       $('#subscribeEmailButton').on('click', function (e) {
+    	e.preventDefault();
+    	$('#subscribeSrEmail').parent().parent().append('<p class="alert alert-success">Cảm ơn bạn đã đăng ký</p>');
+    		$.post('https://gsviec.com/subscribe/coming',{
+    			domain: "canhweb (Canh Website)",
+    			email: $('#subscribeSrEmail').val(),
+    			describe: "Canhweb là một dịch vụ cung cấp các giải pháp về việc giám sát website cũng như server của ban."
+    		});
+   		})
 
     });
   </script>
