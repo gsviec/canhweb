@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css">
 
   <!-- CSS Front Template -->
-  <link rel="stylesheet" href="https://htmlstream.com/preview/front-v2.3.0/assets/css/theme.css">
+  <link rel="stylesheet" href="css/theme.css">
 </head>
 <body>
   <!-- ========== HEADER ========== -->
@@ -672,29 +672,67 @@
   <!-- ========== END FOOTER ========== -->
 
   <!-- JS Global Compulsory -->
-  <script src="https://htmlstream.com/preview/front-v2.3.0/assets/vendor/jquery/dist/jquery.min.js"></script>
-  <script src="https://htmlstream.com/preview/front-v2.3.0/assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
-  <script src="https://htmlstream.com/preview/front-v2.3.0/assets/vendor/popper.js/dist/umd/popper.min.js"></script>
-  <script src="https://htmlstream.com/preview/front-v2.3.0/assets/vendor/bootstrap/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/jquery-migrate.min.js"></script>
+  <!-- <script src="https://htmlstream.com/preview/front-v2.3.0/assets/vendor/popper.js/dist/umd/popper.min.js"></script>
+  <script src="https://htmlstream.com/preview/front-v2.3.0/assets/vendor/bootstrap/bootstrap.min.js"></script> -->
 
   <!-- JS Implementing Plugins -->
-  <script src="https://htmlstream.com/preview/front-v2.3.0/assets/vendor/svg-injector/dist/svg-injector.min.js"></script>
-  <script src="https://htmlstream.com/preview/front-v2.3.0/assets/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
-  <script src="https://htmlstream.com/preview/front-v2.3.0/assets/vendor/jquery.countdown.min.js"></script>
+ <!--  <script src="https://htmlstream.com/preview/front-v2.3.0/assets/vendor/svg-injector/dist/svg-injector.min.js"></script> -->
+  <script src="js/jquery.validate.min.js"></script>
+  <script src="js/jquery.countdown.min.js"></script>
 
   <!-- JS Front -->
-  <script src="https://htmlstream.com/preview/front-v2.3.0/assets/js/hs.core.js"></script>
-  <script src="https://htmlstream.com/preview/front-v2.3.0/assets/js/components/hs.validation.js"></script>
-  <script src="https://htmlstream.com/preview/front-v2.3.0/assets/js/components/hs.focus-state.js"></script>
-  <script src="https://htmlstream.com/preview/front-v2.3.0/assets/js/components/hs.countdown.js"></script>
-  <script src="https://htmlstream.com/preview/front-v2.3.0/assets/js/components/hs.svg-injector.js"></script>
+  <script src="js/hs.core.js"></script>
+  <script src="js/hs.validation.js"></script>
+  <script>
+  	/**
+ * Focus state wrapper.
+ *
+ * @author Htmlstream
+ * @version 1.0
+ *
+ */
+;(function ($) {
+  'use strict';
+
+  $.HSCore.components.HSFocusState = {
+    /**
+     * Focus state.
+     *
+     * @return undefined
+     */
+    init: function () {
+      var collection = $('.js-focus-state input:not([type="checkbox"], [type="radio"]), .js-focus-state textarea, .js-focus-state select');
+
+      if (!collection.length) return;
+
+      collection.on('focusin', function () {
+        var $this = $(this),
+            $thisParent = $this.closest('.js-focus-state');
+
+        $thisParent.addClass('u-focus-state');
+      });
+
+      collection.on('focusout', function () {
+        var $this = $(this),
+            $thisParent = $this.closest('.js-focus-state');
+
+        $thisParent.removeClass('u-focus-state');
+      });
+    }
+  };
+})(jQuery);
+  </script>
+  <script src="js/hs.countdown.js"></script>
+  <!-- <script src="https://htmlstream.com/preview/front-v2.3.0/assets/js/components/hs.svg-injector.js"></script> -->
 
   <!-- JS Plugins Init. -->
   <script>
-    $(window).on('load', function () {
-      // initialization of svg injector module
-      $.HSCore.components.HSSVGIngector.init('.js-svg-injector');
-    });
+    // $(window).on('load', function () {
+    //   // initialization of svg injector module
+    //   $.HSCore.components.HSSVGIngector.init('.js-svg-injector');
+    // });
 
     $(document).on('ready', function () {
       // initialization of form validation
