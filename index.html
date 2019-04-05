@@ -585,14 +585,14 @@
             <div class="pl-lg-4">
               <!-- Title -->
               <div class="mb-4">
-                <h1 class="text-primary font-weight-normal">We're coming <span class="font-weight-semi-bold">soon</span>.</h1>
-                <p>Our website is under construction. We'll be here soon with our new awesome site, subscribe to be notified.</p>
+                <h1 class="text-primary font-weight-normal">Chúng tôi sẽ sớm <span class="font-weight-semi-bold">ra mắt</span>.</h1>
+                <p>Trang web của chúng tôi đang được xây dựng. Chúng tôi sẽ sớm có mặt ở đây với trang web tuyệt vời mới của chúng tôi, đăng ký để được thông báo.</p>
               </div>
               <!-- End Title -->
 
               <!-- Countdown -->
               <div class="js-countdown row mb-5"
-                   data-end-date="2020/11/30"
+                   data-end-date="2019/6/30"
                    data-month-format="%m"
                    data-days-format="%D"
                    data-hours-format="%H"
@@ -621,12 +621,12 @@
               <form class="js-validate js-form-message js-focus-state">
                 <label class="sr-only" for="subscribeSrEmail">Enter your email address</label>
                 <div class="input-group">
-                  <input type="text" class="form-control" name="name" id="subscribeSrEmail" placeholder="Enter your email address" aria-label="Enter your email address" aria-describedby="subscribeEmailButton" required
-                         data-msg="Please enter a valid email address."
+                  <input type="email" class="form-control" name="name" id="subscribeSrEmail" placeholder="Nhập địa chỉ email của bạn" aria-label="Enter your email address" aria-describedby="subscribeEmailButton" required
+                         data-msg="Vui lòng nhập một địa chỉ email hợp lệ."
                          data-error-class="u-has-error"
                          data-success-class="u-has-success">
                   <div class="input-group-append">
-                    <button type="submit" class="btn btn-primary" id="subscribeEmailButton">Subscribe</button>
+                    <button type="submit" class="btn btn-primary" id="subscribeEmailButton">Đăng ký</button>
                   </div>
                 </div>
               </form>
@@ -645,7 +645,7 @@
     <div class="container">
       <div class="d-flex justify-content-between align-items-center space-1">
         <!-- Copyright -->
-        <p class="small text-muted mb-0">&copy; Front. 2018 Htmlstream.</p>
+        <p class="small text-muted mb-0">&copy; Canhweb. 2019.</p>
         <!-- End Copyright -->
 
         <!-- Social Networks -->
@@ -717,6 +717,13 @@
         minutesElSelector: '.js-cd-minutes',
         secondsElSelector: '.js-cd-seconds'
       });
+
+     //   $('#subscribeEmailButton').on('click', function (e) {
+    	// e.preventDefault();
+    	// $('#subscribeSrEmail').parent().parent().append('<p class="alert alert-success">Cảm ơn bạn đã đăng ký</p>');
+    	// 	$.post('https://gsviec.com/subscribe/weekly',{name: "Duythien", email: $('#email').val()});
+   		// })
+
     });
   </script>
 </body>
